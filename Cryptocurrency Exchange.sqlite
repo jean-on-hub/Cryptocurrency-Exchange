@@ -1,0 +1,35 @@
+--  inspect data
+-- SELECT *
+-- FROM transactions;
+
+-- total amount in
+-- select sum(money_in) from transactions;
+
+-- total amount out
+-- select sum(money_out) from transactions;
+
+-- check coins which dominates fiddy cent
+-- total number of coins
+-- select count(*) from transactions where money_in not null;
+
+-- coins with "BIT"
+-- select count(money_in) from transactions where currency ="BIT"  ;
+
+-- largest transaction
+-- SELECT MAX(money_in)
+-- FROM transactions;
+ 
+-- SELECT MAX(money_out)
+-- FROM transactions;
+
+-- average money in
+
+-- select avg(money_in) from transactions where currency ="ETH" 
+-- check daily transactions
+select date , round(avg(money_in),2) as average_in,round(avg(money_out),2) as average_out from transactions  group by date;
+
+
+
+
+
+
